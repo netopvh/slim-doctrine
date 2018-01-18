@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application('Console', '1.0.0');
+
+$CacheClearCommand = new \Commands\CacheClear();
+//$GenerateCommand = new \Commands\GenerateCommand();
+$GenerateController = new \Commands\GenerateController();
+$GenerateMiddleware = new \Commands\GenerateMiddleware();
+$GenerateEntity = new \Commands\GenerateEntity();
+$DataFixture = new \Commands\DataFixture();
+
+$application->add($CacheClearCommand);
+//$application->add($GenerateCommand);
+$application->add($GenerateController);
+$application->add($GenerateMiddleware);
+$application->add($GenerateEntity);
+$application->add($DataFixture);
+$application->run();
