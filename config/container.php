@@ -25,11 +25,20 @@ if (getenv('ENV') == 'local') {
     };
 }
 
+// Translator
+$container['translator'] = function ($container) {
+    $loader = new Illuminate\Translation\FileLoader(new Illuminate\Filesystem\Filesystem(), $container->get('settings')['translations_path']);
+
+    // Langue par défaut
+    $translator = new Illuminate\Translation\Translator($loader, "en");
+    return $translator;
+};
+
 // Twig
 $container['view'] = function ($container) {
     $pathView = dirname(__DIR__);
 
-    if (env('CACHE')) {
+    if (slim_env('CACHE')) {
         $cache = $pathView.'/app/cache';
     } else {
         $cache = false;
@@ -45,6 +54,7 @@ $container['view'] = function ($container) {
         $view->addExtension(new Twig_Extension_Profiler($container['twig_profile']));
         $view->addExtension(new Twig_Extension_Debug());
     }
+    $view->addExtension(new App\TwigExtension\TranslatorExtension($container['translator']));
 
     return $view;
 };
