@@ -1,6 +1,5 @@
 <?php
 return [
-    'title' => 'Hello!',
-    'greet' => 'Hello :name!',
-    'intro' => 'Welcome to this translated website.'
+    'title' => 'Hello world!',
+    'greet' => 'Hello :name!'
 ];

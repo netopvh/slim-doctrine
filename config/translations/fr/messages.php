@@ -1,6 +1,5 @@
 <?php
 return [
-    'title' => 'Bonjour !',
-    'greet' => 'Bonjour :name!',
-    'intro' => 'Bienvenue sur ce site traduit.'
+    'title' => 'Bonjour le monde !',
+    'greet' => 'Bonjour :name !'
 ];

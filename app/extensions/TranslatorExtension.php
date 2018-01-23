@@ -1,5 +1,5 @@
 <?php
-namespace App\TwigExtension;
+namespace App\Extensions;
 use Illuminate\Translation\Translator;
 /**
  * Registers the Illuminate Translator as a the trans and transChoice functions in Twig

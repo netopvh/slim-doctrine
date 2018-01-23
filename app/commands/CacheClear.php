@@ -12,13 +12,13 @@ class CacheClear extends Command
 {
     protected function configure()
     {
-        $this->setName('clear:cache');
+        $this->setName('cache:clear');
         $this->setDescription('Vide le dossier cache de twig');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $files = __DIR__.'/../app/cache/';
+        $files = __DIR__.'/../cache/';
         $output->writeln("Traitement des fichiers de cache");
         $this->delete_directory($files);
         $output->writeln("Cache vidé avec succès");
