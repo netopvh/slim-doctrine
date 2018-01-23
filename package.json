@@ -1,7 +1,7 @@
 {
   "name": "slim-doctrine",
-  "version": "1.0.0",
-  "description": "Skeleton Slim 3 avec doctrine",
+  "version": "1.0.1",
+  "description": "Plus qu'un simple skeleton slim, un véritable framework.",
   "main": "gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",

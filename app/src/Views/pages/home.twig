@@ -2,11 +2,7 @@
 
 {% block content %}
 
-<h1>{{ title }}</h1>
-<p>{{ user }}</p>
-
-{% for user in users %}
-    {{ user.name }}
-{% endfor %}
+<h1>{{ trans('messages.title') }}</h1>
+<p>{{ trans('messages.greet', {'name': user}) }}</p>
 
 {% endblock %}

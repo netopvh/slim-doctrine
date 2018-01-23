@@ -9,6 +9,7 @@ Debugger::timer();
 return [
     'settings' => [
         'displayErrorDetails' => true,
+        'translations_path' => DIR . '/config/translations/',
         'determineRouteBeforeAppMiddleware' => true,
         'addContentLengthHeader' => false,// if true = Unexpected data in output buffer
         // 'routerCacheFile' => DIR . 'var/cache/fastroute.cache',// uncomment after debug

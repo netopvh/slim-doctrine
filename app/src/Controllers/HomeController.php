@@ -14,22 +14,23 @@ class HomeController extends Controller
         }
         $user = $this->session->get('user');
 
-        // Exemple doctrine
-        $users = $this->em->getRepository('App\Entity\User')->queryGetUsers();
+        // Passer en langue française (un second rafraichissement est necessaire)
+        // $this->session->set('lang', 'fr');
 
-        $title = "Hello World!";
+        // Exemple doctrine
+        // $users = $this->em->getRepository('App\Entity\User')->queryGetUsers();
 
         // Exemple monolog
-        if (isset($title) && $title === "Hello World!") {
-            $this->logger->addInfo("Message de bienvenue envoyé");
-        } else {
-            $title = "Nop";
-        }
+        $this->logger->addInfo("Bienvenue ".$user);
 
         // Exemple d'alerte
-        $this->alert(["Ceci est un message d'alerte de test"], 'danger');
+        if ($this->session->has('lang') && $this->session->get('lang') == "fr") {
+            $this->alert(["Ceci est un message d'alerte de test"], 'danger');
+        } else {
+            $this->alert(["This is a test alert message"], 'danger');
+        }
 
-        $params = compact("title", "users", "user");
+        $params = compact("user");
         $this->render($response, 'pages/home.twig', $params);
     }
 

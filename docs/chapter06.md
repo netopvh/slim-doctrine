@@ -69,4 +69,4 @@ Pour plus d'information sur cette dernière, aller voir ce poste sur [StackOverF
 
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
-| [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Csrf/Token](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter05.md) | [Déboguer](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter07.md) |
+| [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Csrf/Token](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter05.md) | [Debugger Bar](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter07.md) |

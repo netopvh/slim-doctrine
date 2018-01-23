@@ -60,7 +60,9 @@ if (getenv('ENV') == 'local') {
     $app->run();
     RunTracy\Helpers\Profiler\Profiler::finish('runApp, %s, line %s', basename(__FILE__), __LINE__);
 } else {
-    $app = new \Slim\App();
+    $app = new \Slim\App([
+      'translations_path' => __DIR__ . '/../config/translations/'
+    ]);
 
     // Le container qui compose nos librairies
     require __DIR__ . '/../config/container.php';
