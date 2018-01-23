@@ -10,5 +10,5 @@ Il est à noté que l'option `Console Panel` ne fonctionne pas, et il est inutil
 Pour déboguer pendant le développement de votre application, dans vos `controllers/middlewares` je vous recommande d'utiliser la fonction `r()` qui est un `var_dump` amélioré, en revanche si vous voulez déboguer directement sur twig vous avez la function `dump()` qui est activé quand vous êtes en environnement de développement `local`.
 
 | Introduction | Chapitre précédent | Chapitre suivant |
-| :---------------------: | :--------------: |
+| :----------: | :----------------: | :--------------: |
 | [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Front-End & Gulpfile](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md) | [Multilingue](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter08.md) |
