@@ -2,7 +2,7 @@
 namespace App\Extensions;
 use Illuminate\Translation\Translator;
 /**
- * Registers the Illuminate Translator as a the trans and transChoice functions in Twig
+ * Classe utilisant Illuminate Translator dans twig (Don't touch)
  */
 class TranslatorExtension extends \Twig_Extension
 {

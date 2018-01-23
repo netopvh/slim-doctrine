@@ -1,10 +1,10 @@
-[![version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.0.0)
+[![version](https://img.shields.io/badge/Version-1.0.1-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.0.1)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://php.net/)
 [![Build Status](https://travis-ci.org/SimonDevelop/slim-doctrine.svg?branch=master)](https://travis-ci.org/SimonDevelop/slim-doctrine)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/SimonDevelop/slim-doctrine/blob/master/LICENSE)
 # slim-doctrine
 
-Skeleton `slim 3` MVC pour projet web.
+Plus qu'un simple skeleton `slim`, un véritable framework.
 
 Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md](https://github.com/SimonDevelop/slim-doctrine/blob/master/CONTRIBUTING.md).
 
@@ -18,7 +18,9 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - Fichier `config/error_pages.php` pour personnaliser les pages d'erreurs (404, 405, 500).
 - Mise en place de middlewares pour le csrf, token, message flash et sauvegarde des inputs.
 - Commandes via la console pour créer rapidement des controlleurs/middlewares ou pour vider le cache de twig.
-- Doctrine 2 comme ORM avec les DataFixtures
+- Doctrine 2 comme ORM avec les DataFixtures.
+- Un helper pour la gestion des sessions.
+- Système multilingue avec twig.
 - Script gulp pour faciliter le développement front-end.
 
 
@@ -34,7 +36,8 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - [symfony/console](https://github.com/symfony/console) pour des commandes console.
 - [seldaek/monolog](https://github.com/Seldaek/monolog) pour gérer des logs.
 - [runcmf/runtracy](https://github.com/runcmf/runtracy) le profiler.
-- [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) middleware pour la gestion des sessions.
+- [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) helper pour la gestion des sessions.
+- [illuminate/translation](https://github.com/illuminate/translation) pour le système multilingue.
 - Script gulpfile.js (lib nodejs) pour la compilation less/sass/scss et minification des fichiers css/js/images.
 
 

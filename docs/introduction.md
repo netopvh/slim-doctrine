@@ -8,6 +8,7 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
 - `app/` dossier de l'application
   - `cache/` cache [twig](https://github.com/slimphp/Twig-View) de l'application
   - `commands/` les commandes [console](https://github.com/symfony/console)
+  - `extensions/` les classes d'extensions utilisées (exemple: TranslatorExtension pour twig)
   - `logs/` les logs de [monolog](https://github.com/Seldaek/monolog)
   - `src/` dossier des controllers/middlewares/views
     - `Controllers/` dossier des controllers
@@ -29,4 +30,5 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
 - [Doctrine/Commandes](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter04.md)
 - [Csrf/Token](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter05.md)
 - [Front-End & Gulpfile](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md)
-- [Déboguer](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter07.md)
+- [Debugger Bar](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter07.md)
+- [Multilingue](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter08.md)
