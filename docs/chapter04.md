@@ -12,6 +12,13 @@ Voici la commande doctrine que vous aurez besoin pour déclarer vos entités en 
 $ php vendor/bin/doctrine orm:schema-tool:update
 ```
 
+Pour les développeurs sous windows, il se peut que cette commande ne fonctionne pas selon la console que vous utilisez.<br>
+Vous avez cette commande alternative:
+
+``` bash
+$ php vendor/doctrine/orm/bin/doctrine.php orm:schema-tool:update
+```
+
 Vous pouvez envoyer des données fictives en base de données via la librairie `data-fixtures` de doctrine, créez vos fixtures dans le dossier `app/src/Entity/DataFixtures` puis lancez la commande :
 
 ``` bash
