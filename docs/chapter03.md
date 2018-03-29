@@ -68,7 +68,7 @@ use App\Middlewares;
 // Middleware pour les message d'alert en session
 $app->add(new Middlewares\AlertMiddleware($container->view->getEnvironment()));
 
-// Middleware pour la sauvegarde des champs de saisi
+// Middleware pour la sauvegarde des champs de saisie
 $app->add(new Middlewares\OldMiddleware($container->view->getEnvironment()));
 
 // Middleware pour la génération de token
