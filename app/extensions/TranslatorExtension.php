@@ -1,6 +1,8 @@
 <?php
 namespace App\Extensions;
+
 use Illuminate\Translation\Translator;
+
 /**
  * Classe utilisant Illuminate Translator dans twig (Don't touch)
  */
@@ -21,8 +23,8 @@ class TranslatorExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('trans', array($this->translator, 'trans')),
-            new \Twig_SimpleFunction('transChoice', array($this->translator, 'transChoice')),
+            new \Twig_SimpleFunction('trans', [$this->translator, 'trans']),
+            new \Twig_SimpleFunction('transChoice', [$this->translator, 'transChoice']),
         ];
     }
 }

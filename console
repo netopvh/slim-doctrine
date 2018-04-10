@@ -5,7 +5,7 @@ require __DIR__.'/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 
-$application = new Application('Console', '1.0.2');
+$application = new Application('Console', '1.0.3');
 
 $CacheClearCommand = new \Commands\CacheClear();
 //$GenerateCommand = new \Commands\GenerateCommand();

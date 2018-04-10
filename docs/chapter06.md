@@ -4,8 +4,9 @@ Le script `gulpfile.js` vous permet avec de simples commandes de compiler ou min
 
 Dans le dossier `front`, sont disposez des dossiers dédiés au développement front-end dans divers langagues (`less`, `sass`, `scss`, `css` et `js`) mais vous pouvez aussi optimiser les images dans `img`.
 
-Pour pouvoir utiliser le script gulp, il vous faut au préalable avoir nodejs 6 au minimum d'installé puis lancer la commande :
+Pour pouvoir utiliser le script gulp, il vous faut au préalable avoir nodejs 6 au minimum d'installé puis lancer les commandes :
 ```bash
+$ sudo npm install -g gulp
 $ npm install
 ```
 

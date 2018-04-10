@@ -26,6 +26,9 @@ DBP_PWD = "root"
 ```
 
 Vous avez aussi les variables `ENV` et `CACHE`, la première vous permet de déterminer sur quelle base de données travailler, en développement ou production (`local` ou `prod`).<br>
+
+Pour le moment, la configuration doctrine est spécialement conçu pour l'utilisation d'une base de données MySQL ou MariaDB. L'utilisation de SQLite est possible, mais il vous faudra modifier certaines choses dans le container et la partie console (sujet hors tuto).<br>
+
 La seconde détermine l'utilisation du cache de twig, il est préférable de le désactiver en développement (`false` pour désactiver, `true` pour activer).
 ```
 # Environment mode

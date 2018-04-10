@@ -20,13 +20,13 @@ class CacheClear extends Command
     {
         $files = __DIR__.'/../cache/';
         $output->writeln("Traitement des fichiers de cache");
-        $this->delete_directory($files);
+        $this->deleteDirectory($files);
         $output->writeln("Cache vidé avec succès");
     }
 
-    protected function delete_directory($dirname)
+    protected function deleteDirectory($dirname)
     {
-        $diractory_list = array();
+        $diractory_list = [];
         if (is_dir($dirname)) {
             $dir_handle = opendir($dirname);
             if (!$dir_handle) {
@@ -38,7 +38,7 @@ class CacheClear extends Command
                         unlink($dirname."/".$file);
                     } else {
                         $diractory_list[] = $dirname.'/'.$file;
-                        $this->delete_directory($dirname.'/'.$file);
+                        $this->deleteDirectory($dirname.'/'.$file);
                     }
                 }
             }

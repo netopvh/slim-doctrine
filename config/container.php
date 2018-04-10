@@ -27,7 +27,10 @@ if (getenv('ENV') == 'local') {
 
 // Translator
 $container['translator'] = function ($container) {
-    $loader = new Illuminate\Translation\FileLoader(new Illuminate\Filesystem\Filesystem(), dirname(__DIR__) . '/config/translations');
+    $loader = new Illuminate\Translation\FileLoader(
+        new Illuminate\Filesystem\Filesystem(),
+        dirname(__DIR__) . '/config/translations'
+    );
 
     // Langue par défaut via la session
     $session = $container['session'];
@@ -49,9 +52,9 @@ $container['view'] = function ($container) {
         $cache = false;
     }
     $view = new \Slim\Views\Twig($pathView.'/app/src/Views', [
-    'cache' => $cache,
-    'debug' => true
-  ]);
+        'cache' => $cache,
+        'debug' => true
+    ]);
 
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));

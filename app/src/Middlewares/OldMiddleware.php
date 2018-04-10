@@ -17,7 +17,10 @@ class OldMiddleware
 
     public function __invoke(Request $request, Response $response, $next)
     {
-        $this->twig->addGlobal('old', $this->container->session->has('old') ? $this->container->session->get('old') : []);
+        $this->twig->addGlobal(
+            'old',
+            $this->container->session->has('old') ? $this->container->session->get('old') : []
+        );
         if ($this->container->session->has('old')) {
             $this->container->session->delete('old');
         }

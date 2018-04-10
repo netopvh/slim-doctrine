@@ -23,7 +23,8 @@ class CsrfMiddleware
             $valueKey = $csrf->getTokenValueKey();
             $name = $request->getAttribute($nameKey);
             $value = $request->getAttribute($valueKey);
-            return "<input type=\"hidden\" name=\"$nameKey\" value=\"$name\"><input type=\"hidden\" name=\"$valueKey\" value=\"$value\">";
+            return "<input type=\"hidden\" name=\"$nameKey\" value=\"$name\">
+                    <input type=\"hidden\" name=\"$valueKey\" value=\"$value\">";
         }, ['is_safe' => ['html']]));
         return $next($request, $response);
     }

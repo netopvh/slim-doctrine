@@ -17,7 +17,10 @@ class AlertMiddleware
 
     public function __invoke(Request $request, Response $response, $next)
     {
-        $this->twig->addGlobal('alert', $this->container->session->has('alert') ? $this->container->session->get('alert') : []);
+        $this->twig->addGlobal(
+            'alert',
+            $this->container->session->has('alert') ? $this->container->session->get('alert') : []
+        );
         if ($this->container->session->has('alert')) {
             $this->container->session->delete('alert');
         }
