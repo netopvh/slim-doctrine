@@ -9,7 +9,7 @@ install:
   - composer install
 
 before_script:
-  - chmod -R 777 app
+  - chmod -R 770 app/logs && chmod -R 770 app/cache
   - sh -c "mysql -e 'CREATE DATABASE slim;'"
   - cp .env.travis .env
   - php vendor/bin/doctrine orm:schema-tool:update --force

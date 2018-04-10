@@ -2,7 +2,6 @@
 
 // Commentez la condition "if" pour l'utilisation de ces pages en mode developpement
 if (getenv('ENV') == 'prod') {
-
   // 404
     $container['notFoundHandler'] = function ($container) {
         return function ($request, $response) use ($container) {
@@ -14,7 +13,6 @@ if (getenv('ENV') == 'prod') {
             ])->withStatus(404);
         };
     };
-
     // 405
     $container['notAllowedHandler'] = function ($container) {
         return function ($request, $response, $methods) use ($container) {
@@ -26,7 +24,6 @@ if (getenv('ENV') == 'prod') {
             ])->withStatus(405);
         };
     };
-
     // 500
     $container['errorHandler'] = function ($container) {
         return function ($request, $response, $exception) use ($container) {
@@ -38,5 +35,4 @@ if (getenv('ENV') == 'prod') {
             ])->withStatus(500);
         };
     };
-
 }
