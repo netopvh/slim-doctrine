@@ -1,4 +1,4 @@
-[![version](https://img.shields.io/badge/Version-1.0.3-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.0.3)
+[![version](https://img.shields.io/badge/Version-1.0.4-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.0.4)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://php.net/)
 [![Build Status](https://travis-ci.org/SimonDevelop/slim-doctrine.svg?branch=master)](https://travis-ci.org/SimonDevelop/slim-doctrine)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/SimonDevelop/slim-doctrine/blob/master/LICENSE)
@@ -34,6 +34,7 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - [digitalnature/php-ref](https://github.com/digitalnature/php-ref) pour une fonction var_dump amélioré.
 - [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) pour la configuration de l'environnement.
 - [symfony/console](https://github.com/symfony/console) pour des commandes console.
+- [php-school/cli-menu](https://github.com/php-school/cli-menu) pour simplifier l'exécution des commandes.
 - [seldaek/monolog](https://github.com/Seldaek/monolog) pour gérer des logs.
 - [runcmf/runtracy](https://github.com/runcmf/runtracy) le profiler.
 - [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) helper pour la gestion des sessions.

@@ -77,10 +77,12 @@ class DataFixture extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $output->writeln("Traitement des fixtures...");
         $loader = new Loader();
         $loader->loadFromDirectory(dirname(__DIR__)."/src/Entity/DataFixtures");
         $purger = new ORMPurger();
         $executor = new ORMExecutor($this->getEntityManager(), $purger);
         $executor->execute($loader->getFixtures());
+        $output->writeln("Fixtures envoyés");
     }
 }
