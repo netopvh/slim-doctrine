@@ -2,22 +2,76 @@
 <?php
 
 require __DIR__.'/vendor/autoload.php';
-
 use Symfony\Component\Console\Application;
+use PhpSchool\CliMenu\CliMenu;
+use PhpSchool\CliMenu\CliMenuBuilder;
 
-$application = new Application('Console', '1.0.3');
+if (isset($argv[1])) {
+    $application = new Application('Console', '1.0.4');
 
-$CacheClearCommand = new \Commands\CacheClear();
-//$GenerateCommand = new \Commands\GenerateCommand();
-$GenerateController = new \Commands\GenerateController();
-$GenerateMiddleware = new \Commands\GenerateMiddleware();
-$GenerateEntity = new \Commands\GenerateEntity();
-$DataFixture = new \Commands\DataFixture();
+    $CacheClearCommand = new \Commands\CacheClear();
+    //$GenerateCommand = new \Commands\GenerateCommand();
+    $GenerateController = new \Commands\GenerateController();
+    $GenerateMiddleware = new \Commands\GenerateMiddleware();
+    $GenerateEntity = new \Commands\GenerateEntity();
+    $DataFixture = new \Commands\DataFixture();
 
-$application->add($CacheClearCommand);
-//$application->add($GenerateCommand);
-$application->add($GenerateController);
-$application->add($GenerateMiddleware);
-$application->add($GenerateEntity);
-$application->add($DataFixture);
-$application->run();
+    $application->add($CacheClearCommand);
+    //$application->add($GenerateCommand);
+    $application->add($GenerateController);
+    $application->add($GenerateMiddleware);
+    $application->add($GenerateEntity);
+    $application->add($DataFixture);
+    $application->run();
+} else {
+    $cache = function (CliMenu $menu) {
+        $menu->close();
+        system('php '.__DIR__.'/console cache:clear');
+    };
+    $generateController = function (CliMenu $menu) {
+        $menu->close();
+        system('php '.__DIR__.'/console generate:controller CliController');
+    };
+    $generateMiddleware = function (CliMenu $menu) {
+        $menu->close();
+        system('php '.__DIR__.'/console generate:middleware CliMiddleware');
+    };
+    $generateEntity = function (CliMenu $menu) {
+        $menu->close();
+        system('php '.__DIR__.'/console generate:middleware Cli');
+    };
+    $doctrineUpdate = function (CliMenu $menu) {
+        $menu->close();
+        system('php '.__DIR__.'/vendor/bin/doctrine orm:schema-tool:update --force');
+    };
+    $doctrineFixture = function (CliMenu $menu) {
+        $menu->close();
+        system('php '.__DIR__.'/console data:fixtures');
+    };
+    $menu = (new CliMenuBuilder)
+        ->setTitle('Slim-Doctrine Menu')
+        ->setExitButtonText("Quitter")
+        ->setUnselectedMarker(' ')
+        ->setSelectedMarker('>')
+        ->setBackgroundColour('black')
+        ->setForegroundColour('white')
+        ->addItem('Vider le cache', $cache)
+        ->addSubMenu('Générer un fichier')
+            ->setTitle('Slim-Doctrine Menu > Générer un fichier')
+            ->setExitButtonText("Quitter")
+            ->addItem('Générer un Controller', $generateController)
+            ->addItem('Générer un Middleware', $generateMiddleware)
+            ->addItem('Générer une Entity', $generateEntity)
+            ->setGoBackButtonText("Retour")
+            ->end()
+        ->addSubMenu('Doctrine')
+            ->setTitle('Slim-Doctrine Menu > Doctrine')
+            ->setExitButtonText("Quitter")
+            ->addItem('Mettre à jour les tables', $doctrineUpdate)
+            ->addItem('Initialiser les fixtures', $doctrineFixture)
+            ->setGoBackButtonText("Retour")
+            ->end()
+        ->build();
+
+    $menu->open();
+}

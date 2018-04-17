@@ -19,7 +19,7 @@ class CacheClear extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $files = __DIR__.'/../cache/';
-        $output->writeln("Traitement des fichiers de cache");
+        $output->writeln("Traitement des fichiers de cache...");
         $this->deleteDirectory($files);
         $output->writeln("Cache vidé avec succès");
     }
