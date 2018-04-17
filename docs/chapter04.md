@@ -70,6 +70,8 @@ Pour accèder au menu, lancer juste :
 $ ./console
 ```
 
+Pour la génération des `Controllers` ,`Middlewares` et `Entity`, leur nom sera prédéfini par `CliController.php`, `CliMiddleware.php` et `Cli.php`.
+
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
 | [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Controllers/Views/Middlewares](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter03.md) | [Csrf/Token](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter05.md) |
