@@ -39,14 +39,14 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - [runcmf/runtracy](https://github.com/runcmf/runtracy) le profiler.
 - [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) helper pour la gestion des sessions.
 - [illuminate/translation](https://github.com/illuminate/translation) pour le système multilingue.
-- Script gulpfile.js (lib nodejs) pour la compilation less/sass/scss et minification des fichiers css/js/images.
+- [gulpjs/gulp](https://github.com/gulpjs/gulp) pour la compilation less/sass/scss et minification des fichiers css/js/images.
 
 
 ## Installation
 
 Via composer
 
-``` bash
+```bash
 $ composer create-project simondevelop/slim-doctrine <projet_name>
 $ cd <projet_name>
 $ composer install
@@ -61,6 +61,63 @@ N'oubliez pas de vérifier que votre configuration d'environnement de votre base
 
 Autoriser les dossiers `app/cache` et `app/logs` à l'écriture coté serveur web.
 
+## Docker
+
+Un docker-compose est disponible pour faire fonctionner le skeleton via docker.<br>
+
+1. Télécharger le skeleton :
+```bash
+$ composer create-project simondevelop/slim-doctrine <projet_name>
+# Ou
+$ git clone https://github.com/SimonDevelop/slim-doctrine.git
+```
+
+2. Lancer composer :
+```bash
+$ composer install
+# Ou
+$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+$ php composer-setup.php
+$ php -r "unlink('composer-setup.php');"
+$ php composer.phar install
+# Ou
+$ docker run -ti --rm -v $(pwd):/app composer
+```
+
+3. Vérifier le .env :
+```
+# Database development
+DBD_TYPE = "pdo_mysql"
+DBD_NAME = "slim"
+DBD_SERVER = "mysql"
+DBD_USER = "root"
+DBD_PWD = "root"
+
+# Database production
+DBP_TYPE = "pdo_mysql"
+DBP_NAME = "slim"
+DBP_SERVER = "mysql"
+DBP_USER = "root"
+DBP_PWD = "root"
+
+# Environment mode
+# ("local" pour developpement | "prod" pour production)
+ENV = "local"
+
+# Cache twig
+CACHE = false
+```
+
+4. Lancer docker-compose :
+```bash
+# à la racine du projet, lancer cette commande
+$ docker-compose up -d
+```
+
+5. Choses à savoir :<br>
+  - La configuration nginx se trouve dans le dossier `docker/nginx`, vous disposez des logs et de la config pour le skeleton.
+  - Il est important de mettre les dossiers `app/cache` et `app/logs` en écriture `777` pour que le container `nginx` puisse écrire les logs et fichiers de cache twig.
+  - Le docker-compose ne prend pas en charge `nodejs` et `gulp`, à vous de le faire vous même.
 
 # Guide d'utilisation
 
