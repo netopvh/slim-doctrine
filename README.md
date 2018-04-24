@@ -39,7 +39,7 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - [runcmf/runtracy](https://github.com/runcmf/runtracy) le profiler.
 - [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) helper pour la gestion des sessions.
 - [illuminate/translation](https://github.com/illuminate/translation) pour le système multilingue.
-- Script gulpfile.js (lib nodejs) pour la compilation less/sass/scss et minification des fichiers css/js/images.
+- [gulpjs/gulp](https://github.com/gulpjs/gulp) pour la compilation less/sass/scss et minification des fichiers css/js/images.
 
 
 ## Installation
@@ -113,6 +113,11 @@ CACHE = false
 # à la racine du projet, lancer cette commande
 $ docker-compose up -d
 ```
+
+5. Choses à savoir :<br>
+  - La configuration nginx se trouve dans le dossier `docker/nginx`, vous disposez des logs et de la config pour le skeleton.
+  - Il est important de mettre les dossiers `app/cache` et `app/logs` en écriture `777` pour que le container `nginx` puisse écrire les logs et fichiers de cache twig.
+  - Le docker-compose ne prend pas en charge nodejs et gulp, à vous de le faire vous même.
 
 # Guide d'utilisation
 
