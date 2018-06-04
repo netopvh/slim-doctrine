@@ -16,6 +16,10 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
     - `Middlewares/` dossier des middlewares
     - `Views/` dossier des vues [twig](https://github.com/slimphp/Twig-View)
 - `config/` dossier comportant des fichiers de configuration de l'application (container, routes ...)
+    - `translations` dossier comportant les traductions utilisé pour twig
+    - `container.php` le container de dépendences
+    - `middlewares.php` appel des middlewares
+    - `routes.php` le fichier de routes
 - `front/` dossier que vous utilisez pour le développement front-end
 - `public/` dossier public de l'application
 - `.env` fichier de configuration d'environnement base de données
