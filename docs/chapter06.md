@@ -68,6 +68,10 @@ $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo
 ```
 Pour plus d'information sur cette dernière, aller voir ce poste sur [StackOverFlow](https://stackoverflow.com/questions/16748737/grunt-watch-error-waiting-fatal-error-watch-enospc).
 
+Les dépendences pour gulp comporte encore à ce jours quelque vulnérabilitées, mais étant utilisé pour de la compile de fichier css/js/sass/less ceci n'est pas vraiment grave en soit.
+
+je n'est pas la motivation de les changer, si jamais vous trouver une alternative voir implémenter webpack à la place de gulp, hésitez pas à faire une pull request !
+
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
 | [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Csrf/Token](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter05.md) | [Debugger Bar](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter07.md) |

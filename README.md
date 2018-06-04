@@ -1,4 +1,4 @@
-[![version](https://img.shields.io/badge/Version-1.0.4-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.0.4)
+[![version](https://img.shields.io/badge/Version-1.0.5-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.0.5)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://php.net/)
 [![Build Status](https://travis-ci.org/SimonDevelop/slim-doctrine.svg?branch=master)](https://travis-ci.org/SimonDevelop/slim-doctrine)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/SimonDevelop/slim-doctrine/blob/master/LICENSE)

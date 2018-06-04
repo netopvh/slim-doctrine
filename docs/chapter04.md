@@ -22,7 +22,7 @@ $ php vendor/doctrine/orm/bin/doctrine.php orm:schema-tool:update
 Vous pouvez envoyer des données fictives en base de données via la librairie `data-fixtures` de doctrine, créez vos fixtures dans le dossier `app/src/Entity/DataFixtures` puis lancez la commande :
 
 ``` bash
-$ ./console data:fixtures
+$ php console data:fixtures
 ```
 
 L'implémentation des DataFixtures se fait via l'EntityManager de doctrine.<br>
@@ -37,27 +37,27 @@ C'est le fichier `console` qui vous permet d'utiliser les commandes suivantes :
 
 Pour voir la liste des commandes disponibles :
 ``` bash
-$ ./console list
+$ php console list
 ```
 
 Pour vider le cache de twig
 ``` bash
-$ ./console cache:clear
+$ php console cache:clear
 ```
 
 Pour générer un controller ou middleware
 ``` bash
-$ ./console generate:controller TestController
+$ php console generate:controller TestController
 ```
 `app/src/Controllers/TestController.php`
 
 ``` bash
-$ ./console generate:middleware TestMiddleware
+$ php console generate:middleware TestMiddleware
 ```
 `app/src/Middlewares/TestMiddleware.php`
 
 ``` bash
-$ ./console generate:entity Test
+$ php console generate:entity Test
 ```
 `app/src/Entity/Test.php`
 
@@ -67,7 +67,7 @@ Grâce à la librairie [cli-menu](https://github.com/php-school/cli-menu), vous 
 
 Pour accèder au menu, lancer juste :
 ``` bash
-$ ./console
+$ php console
 ```
 
 Pour la génération des `Controllers` ,`Middlewares` et `Entity`, leur nom sera prédéfini par `CliController.php`, `CliMiddleware.php` et `Cli.php`.
