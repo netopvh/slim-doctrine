@@ -21,7 +21,7 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - Doctrine 2 comme ORM avec les DataFixtures.
 - Un helper pour la gestion des sessions.
 - Système multilingue avec twig.
-- Script gulp pour faciliter le développement front-end.
+- Webpack pour faciliter le développement front-end.
 
 
 ## Librairies utilisées
@@ -117,7 +117,7 @@ $ docker-compose up -d
 5. Choses à savoir :<br>
   - La configuration nginx se trouve dans le dossier `docker/nginx`, vous disposez des logs et de la config pour le skeleton.
   - Il est important de mettre les dossiers `app/cache` et `app/logs` en écriture `777` pour que le container `nginx` puisse écrire les logs et fichiers de cache twig.
-  - Le docker-compose ne prend pas en charge `nodejs` et `gulp`, à vous de le faire vous même.
+  - Le docker-compose ne prend pas en charge `nodejs`, à vous de le faire vous même.
 
 # Guide d'utilisation
 
