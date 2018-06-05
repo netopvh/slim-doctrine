@@ -33,6 +33,6 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
 - [Controllers/Views/Middlewares](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter03.md)
 - [Doctrine/Commandes](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter04.md)
 - [Csrf/Token](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter05.md)
-- [Front-End & Gulpfile](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md)
+- [Front-End & Webpack](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md)
 - [Debugger Bar](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter07.md)
 - [Multilingue](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter08.md)
