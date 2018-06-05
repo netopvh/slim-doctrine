@@ -9,7 +9,5 @@ app/logs/*
 !app/logs/.gitkeep
 node_modules/*
 package-lock.json
-.gulp-scss-cache
-.sass-cache
 docker/mysql
 docker/nginx/logs
