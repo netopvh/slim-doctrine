@@ -24,7 +24,7 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
 - `public/` dossier public de l'application
 - `.env` fichier de configuration d'environnement base de données
 - `console` fichier php des commandes [console](https://github.com/symfony/console)
-- `gulpfile.js` script gulp pour la compilation et minification front-end
+- `webpack.config.js` fichier de configuration de webpack
 
 
 ## Guide d'utilisation :
