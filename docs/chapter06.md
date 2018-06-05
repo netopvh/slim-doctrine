@@ -4,7 +4,7 @@ Webpack permet de fusionner et minifier vos fichiers js (prochainement `css` et 
 
 Dans le dossier `front`, sont disposez des dossiers dédiés au développement front-end (`css` et `js`) mais vous pouvez aussi optimiser les images dans `img`.
 
-Pour pouvoir utiliser webpack, il vous faut au préalable avoir nodejs 6 au minimum d'installé puis lancer les commandes :
+Pour pouvoir utiliser webpack, il vous faut au préalable avoir nodejs 6.11.5 au minimum d'installé puis lancer les commandes :
 ```bash
 $ sudo npm install -g webpack-cli
 $ npm install

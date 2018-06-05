@@ -39,7 +39,7 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - [runcmf/runtracy](https://github.com/runcmf/runtracy) le profiler.
 - [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) helper pour la gestion des sessions.
 - [illuminate/translation](https://github.com/illuminate/translation) pour le système multilingue.
-- [gulpjs/gulp](https://github.com/gulpjs/gulp) pour la compilation less/sass/scss et minification des fichiers css/js/images.
+- [webpack/webpack](https://github.com/webpack/webpack) pour la fusion et minification des fichiers css/js.
 
 
 ## Installation
