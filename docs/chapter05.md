@@ -46,4 +46,4 @@ Il vous retourne tout simplement `true` en cas de succès, `false` sinon.
 
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
-| [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Doctrine/Commandes](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter04.md) | [Front-End & Gulpfile](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md) |
+| [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Doctrine/Commandes](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter04.md) | [Front-End & Webpack](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md) |

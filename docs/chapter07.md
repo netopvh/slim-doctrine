@@ -11,4 +11,4 @@ Pour déboguer pendant le développement de votre application, dans vos `control
 
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :----------: | :----------------: | :--------------: |
-| [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Front-End & Gulpfile](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md) | [Multilingue](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter08.md) |
+| [Introduction](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md) | [Front-End & Webpack](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter06.md) | [Multilingue](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/chapter08.md) |
