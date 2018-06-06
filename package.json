@@ -1,6 +1,6 @@
 {
   "name": "slim-doctrine",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Plus qu'un simple skeleton slim, un véritable framework.",
   "main": "webpack.config.js",
   "devDependencies": {
@@ -9,7 +9,7 @@
     "babel-loader": "^8.0.0-beta.3",
     "cross-env": "^5.1.6",
     "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",

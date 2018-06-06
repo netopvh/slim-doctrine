@@ -1,6 +1,6 @@
 const path = require("path")
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin")
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const dev = process.env.NODE_ENV === "dev"
 
 let cssLoaders = [
@@ -12,7 +12,7 @@ let config = {
     mode: 'development',
     watch: dev,
     output: {
-        path: path.resolve("./public/js"),
+        path: path.resolve("./public/assets"),
         filename: "bundle.js"
     },
     devtool: dev ? "cheap-module-eval-source-map" : false,
@@ -44,7 +44,7 @@ let config = {
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: "[name].css"
+            filename: "main.css"
         }),
     ]
 };

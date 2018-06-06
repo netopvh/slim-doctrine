@@ -1,28 +1,26 @@
 # Front-End & Webpack
 
-Webpack permet de fusionner et minifier vos fichiers js (prochainement `css` et optimisation des `images`).
+Webpack permet de fusionner et minifier vos fichiers js, sass, scss et css.
 
-Dans le dossier `front`, sont disposez des dossiers dédiés au développement front-end (`css` et `js`) mais vous pouvez aussi optimiser les images dans `img`.
+Dans le dossier `front`, sont disposez des dossiers dédiés au développement front-end javascript, mais aussi pour la partie style avec du `sass`, `scss` et `css`.
 
 Pour pouvoir utiliser webpack, il vous faut au préalable avoir nodejs 6.11.5 au minimum d'installé puis lancer les commandes :
 ```bash
-$ sudo npm install -g webpack-cli
 $ npm install
 ```
 
 Pour pouvoir fusionner et minifier vos fichiers dans le dossier `public` de votre application, vous avez ces commandes :
 ``` bash
-# Compiler en mode développement (version linux/mac)
+# Compiler en mode développement avec l'option watch (version linux/mac)
 $ npm run webpackdev
 # Compiler en mode production (version linux/mac)
 $ npm run webpack
-# Compiler en mode développement (version windows)
+# Compiler en mode développement avec l'option watch (version windows)
 $ npm run webpack:win
 # Compiler en mode production (version windows)
 $ npm run webpackdev:win
 ```
 
-J'apprend webpack en même temps que je prépare la version 1.0.5 de ce dépot, si jamais vous voulez m'aider à finaliser webpack, n'hésitez surtout pas à faire un pull request !
 
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
