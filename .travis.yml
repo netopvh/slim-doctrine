@@ -4,6 +4,13 @@ php:
   - 7.1
   - 7.2
 
+node_js:
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+
 install:
   - composer selfupdate
   - composer install
@@ -13,6 +20,8 @@ before_script:
   - sh -c "mysql -e 'CREATE DATABASE slim;'"
   - cp .env.travis .env
   - php vendor/bin/doctrine orm:schema-tool:update --force
+  - npm install
 
 script:
   - composer test
+  - npm run webpack

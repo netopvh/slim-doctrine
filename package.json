@@ -1,21 +1,30 @@
 {
   "name": "slim-doctrine",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Plus qu'un simple skeleton slim, un véritable framework.",
   "main": "webpack.config.js",
   "devDependencies": {
-    "extract-text-webpack-plugin": "^3.0.2",
-    "webpack": "^4.11.0",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "babel-loader": "^8.0.0-beta.3",
+    "cross-env": "^5.1.6",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.11.1",
     "webpack-cli": "^3.0.2"
   },
   "engines": {
     "node": ">=6.11.5"
   },
   "scripts": {
-    "webpack": "node_modules/.bin/webpack -p --config webpack.config.js",
-    "webpackdev": "node_modules/.bin/webpack -w --config webpack.config.js",
-    "webpack:win": "node_modules/.bin/webpack.cmd -p --config webpack.config.js",
-    "webpackdev:win": "node_modules/.bin/webpack.cmd -w --config webpack.config.js"
+    "webpack": "node_modules/.bin/webpack",
+    "webpackdev": "NODE_ENV=dev node_modules/.bin/webpack",
+    "webpack:win": "node_modules/.bin/webpack.cmd",
+    "webpackdev:win": "cross-env NODE_ENV=dev node_modules/.bin/webpack.cmd"
   },
   "repository": {
     "type": "git",
