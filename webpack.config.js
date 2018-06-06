@@ -1,17 +1,35 @@
-var webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-module.exports = {
-    context: __dirname + '/front/js',
-    entry: "./index.js",
+const path = require("path")
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin")
+const dev = process.env.NODE_ENV === "dev"
+
+let config = {
+    entry: "./front/js/app.js",
+    mode: 'development',
+    watch: dev,
     output: {
-        path: __dirname+ '/public/js',
+        path: path.resolve("./public/js"),
         filename: "bundle.js"
     },
-    // plugins: [
-        optimization: {
-            minimizer: [
-                new UglifyJSPlugin()
-            ]
-        }
-    // ]
+    module: {
+        rules: [
+            {
+                test:/\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
+    plugins: []
 };
+
+if (!dev) {
+    config.mode = 'production'
+    config.plugins.push(new UglifyJSPlugin())
+}
+
+module.exports = config
