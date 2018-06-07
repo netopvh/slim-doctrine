@@ -10,13 +10,10 @@ matrix:
       env: DB=mysql
     - php: 7.2
       node_js: 8
-      env: DB=mysql
     - php: 7.2
       node_js: 9
-      env: DB=mysql
     - php: 7.2
       node_js: 10
-      env: DB=mysql
 
 install:
   - composer selfupdate
