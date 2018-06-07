@@ -1,16 +1,27 @@
-language: php, node_js
-
-php:
-  - 7.1
-  - 7.2
+language: php
 
 matrix:
   include:
-    - node_js: 6
-    - node_js: 7
-    - node_js: 8
-    - node_js: 9
-    - node_js: 10
+    - php: 7.1
+      node_js: 6
+    - php: 7.1
+      node_js: 7
+    - php: 7.1
+      node_js: 8
+    - php: 7.1
+      node_js: 9
+    - php: 7.1
+      node_js: 10
+    - php: 7.2
+      node_js: 6
+    - php: 7.2
+      node_js: 7
+    - php: 7.2
+      node_js: 8
+    - php: 7.2
+      node_js: 9
+    - php: 7.2
+      node_js: 10
 
 install:
   - composer selfupdate
