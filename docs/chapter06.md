@@ -1,10 +1,10 @@
 # Front-End & Webpack
 
-Webpack permet de fusionner et minifier vos fichiers js, sass, scss et css.
+Webpack permet de fusionner et minifier vos fichiers `js` mais aussi `sass`, `scss` et `css`.
 
-Dans le dossier `assets`, sont disposez des dossiers dédiés au développement front-end javascript, mais aussi pour la partie style avec du `sass`, `scss` et `css` sans oublier le dossier `img` pour stocker nos images, ces derniers seront optimisées.
+Dans le dossier `assets`, sont disposez des dossiers dédiés au développement front-end javascript, mais aussi pour la partie style avec du `sass`, `scss` et `css` sans oublier le dossier `img` pour stocker nos images, ces derniers seront optimisées si ils sont lourd.
 
-La configuration de webpack fait en sorte que votre code `javascript` respect les normes standards avec l'`eslint` et la compatibilité des navigateurs via `babel`.
+La configuration de webpack fait en sorte que votre code `javascript` respect les normes standard avec l'`eslint` et la compatibilité des navigateurs via `babel`, à vous d'adapter votre configuration.
 
 Pour pouvoir utiliser webpack, il vous faut au préalable avoir nodejs 6.11.5 au minimum d'installé puis lancer les commandes :
 ```bash
