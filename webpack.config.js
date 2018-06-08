@@ -11,8 +11,8 @@ let config = {
     entry: [ // Mettre ici vos entrées pour la compilation
         './assets/js/app.js',
         './assets/scss/app.scss',
-        // './assets/scss/app.sass',
-        // './assets/scss/app.css',
+        // './assets/sass/app.sass',
+        // './assets/css/app.css',
     ],
     mode: 'development',
     watch: dev,
