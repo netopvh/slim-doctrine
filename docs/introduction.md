@@ -20,7 +20,7 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
     - `container.php` le container de dépendences
     - `middlewares.php` appel des middlewares
     - `routes.php` le fichier de routes
-- `front/` dossier que vous utilisez pour le développement front-end
+- `assets/` dossier que vous utilisez pour le développement front-end
 - `public/` dossier public de l'application
 - `.env` fichier de configuration d'environnement base de données
 - `console` fichier php des commandes [console](https://github.com/symfony/console)
