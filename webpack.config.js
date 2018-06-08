@@ -8,25 +8,44 @@ let cssLoaders = [
 ]
 
 let config = {
-    entry: "./front/assets/app.js",
+    entry: [
+      './assets/js/app.js',
+      './assets/scss/app.scss'
+    ],
     mode: 'development',
     watch: dev,
     output: {
         path: path.resolve("./public/assets"),
-        filename: "bundle.js"
+        filename: dev ? 'js/bundle.js' : 'js/bundle.min.js',
+        publicPath: '/public/assets/'
+    },
+    resolve: {
+        alias: {
+            '@css': path.resolve('./assets/css/'),
+            '@sass': path.resolve('./assets/sass/'),
+            '@scss': path.resolve('./assets/scss/'),
+            '@img': path.resolve('./assets/img/'),
+            '@js': path.resolve('./assets/js/'),
+        }
     },
     devtool: dev ? "cheap-module-eval-source-map" : false,
     module: {
         rules: [
             {
+                enforce: 'pre',
                 test:/\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
+                use: ['eslint-loader'],
+            }, {
+                test:/\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: ['babel-loader'],
+            }, {
+                test:/\.(scss|sass)$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [...cssLoaders, 'sass-loader']
+                })
             }, {
                 test:/\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -34,17 +53,30 @@ let config = {
                     use: cssLoaders
                 })
             }, {
-                test:/\.(scss|sass)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [...cssLoaders, 'sass-loader']
-                })
+                test: /\.(woff2?|eot|ttf|otf)$/,
+                loader: 'file-loader'
+            },{
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: 'img/[name].[ext]'
+                        }
+                    }
+                ]
+            }, {
+                loader: 'img-loader',
+                options: {
+                    enabled: !dev
+                }
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: "main.css"
+            filename: dev ? 'css/[name].css' : 'css/[name].min.css'
         }),
     ]
 };
