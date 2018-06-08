@@ -4,13 +4,15 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const dev = process.env.NODE_ENV === "dev"
 
 let cssLoaders = [
-  {loader: 'css-loader', options: {minimize: !dev}}
+    {loader: 'css-loader', options: {minimize: !dev}}
 ]
 
 let config = {
-    entry: [
-      './assets/js/app.js',
-      './assets/scss/app.scss'
+    entry: [ // Mettre ici vos entrées pour la compilation
+        './assets/js/app.js',
+        './assets/scss/app.scss',
+        // './assets/scss/app.sass',
+        // './assets/scss/app.css',
     ],
     mode: 'development',
     watch: dev,
