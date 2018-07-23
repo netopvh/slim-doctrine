@@ -3,6 +3,7 @@
 [![Minimum Node Version](https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg)](https://nodejs.org/en/)
 [![Build Status](https://travis-ci.org/SimonDevelop/slim-doctrine.svg?branch=master)](https://travis-ci.org/SimonDevelop/slim-doctrine)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/SimonDevelop/slim-doctrine/blob/master/LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSimonDevelop%2Fslim-doctrine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSimonDevelop%2Fslim-doctrine?ref=badge_shield)
 # slim-doctrine
 
 Plus qu'un simple skeleton `slim`, un véritable framework.
@@ -127,3 +128,7 @@ Pour bien utiliser ce skeleton, il est important de bien connaitre le fonctionne
 Vous avez à votre disposition, plus haut, les liens vers ces derniers pour en savoir plus.
 
 Toute fois, voici un petit [guide d'utilisation](https://github.com/SimonDevelop/slim-doctrine/blob/master/docs/introduction.md).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSimonDevelop%2Fslim-doctrine.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSimonDevelop%2Fslim-doctrine?ref=badge_large)
