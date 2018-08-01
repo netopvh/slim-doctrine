@@ -19,7 +19,7 @@ let config = {
     output: {
         path: path.resolve("./public/assets"),
         filename: dev ? 'js/bundle.js' : 'js/bundle.min.js',
-        publicPath: '/public/assets/'
+        publicPath: '/assets/' // Début d'url pour les fichiers publiques (images par exemple)
     },
     resolve: {
         alias: {
