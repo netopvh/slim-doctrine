@@ -22,7 +22,7 @@
     "img-loader": "^3.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
+    "style-loader": "^0.22.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.11.1",
