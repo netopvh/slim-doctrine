@@ -17,21 +17,21 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string $name
      *
      * @ORM\Column(type="string", length=255)
      */
-    protected $name;
+    private $name;
 
     /**
      * @var datetime $date_create
      *
      * @ORM\Column(type="datetime")
      */
-    protected $date_create;
+    private $date_create;
 
     /**
      * Constructor
