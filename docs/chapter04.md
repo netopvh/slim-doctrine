@@ -31,7 +31,7 @@ Pour plus d'infos sur l'ORM, je vous invite à aller voir la [documentation](htt
 
 ### Commandes
 
-Grâce à la librairie [Console](https://github.com/symfony/console), le skeleton vous offre des commandes pour la création rapide de `Controllers` ,`Middlewares` ,`Entity` et vidage du cache twig.
+Grâce à la librairie [Console](https://github.com/symfony/console), le skeleton vous offre des commandes pour la création rapide de `Controllers` ,`Middlewares` ,`Entity`, `fixture` et vidage du cache twig.
 
 C'est le fichier `console` qui vous permet d'utiliser les commandes suivantes :
 
@@ -61,6 +61,11 @@ $ php console generate:entity Test
 ```
 `app/src/Entity/Test.php`
 
+``` bash
+$ php console generate:fixture TestFixture
+```
+`app/src/Entity/DataFixtures/TestFixture.php`
+
 ### Cli-menu
 
 Grâce à la librairie [cli-menu](https://github.com/php-school/cli-menu), vous disposez d'un menu via la console pour exécuter les divers commandes cités plus haut, pratique en cas d'oubli !
@@ -70,7 +75,7 @@ Pour accèder au menu, lancer juste :
 $ php console
 ```
 
-Pour la génération des `Controllers` ,`Middlewares` et `Entity`, leur nom vous sera demandé par la suite.
+Pour la génération des `Controllers` ,`Middlewares`, `Entity` et `fixture`, leur nom vous sera demandé par la suite.
 
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
