@@ -70,7 +70,7 @@ Pour accèder au menu, lancer juste :
 $ php console
 ```
 
-Pour la génération des `Controllers` ,`Middlewares` et `Entity`, leur nom sera prédéfini par `CliController.php`, `CliMiddleware.php` et `Cli.php`.
+Pour la génération des `Controllers` ,`Middlewares` et `Entity`, leur nom vous sera demandé par la suite.
 
 | Introduction | Chapitre précédent | Chapitre suivant |
 | :---------------------: | :--------------: | :--------------: |
