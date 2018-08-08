@@ -112,7 +112,7 @@ class User
     */
     public function getRank()
     {
-      return $this->rank;
+        return $this->rank;
     }
 
     /**

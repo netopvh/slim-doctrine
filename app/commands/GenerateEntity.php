@@ -25,7 +25,10 @@ class GenerateEntity extends Command
         file_put_contents(dirname(__DIR__).'/src/Entity/'.$name.'.php', preg_replace('/PregReplace/', "$name", $text));
         // Repository
         $text = file_get_contents(__DIR__.'/templates/repository.template.php');
-        file_put_contents(dirname(__DIR__).'/src/Entity/'.$name.'Repository.php', preg_replace('/PregReplace/', "$name", $text));
+        file_put_contents(
+            dirname(__DIR__).'/src/Entity/'.$name.'Repository.php',
+            preg_replace('/PregReplace/', "$name", $text)
+        );
         $output->writeln("Entité générée");
     }
 }
