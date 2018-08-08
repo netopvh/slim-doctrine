@@ -13,7 +13,7 @@ class User
     /**
      * @var integer $id
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id_user", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -25,6 +25,13 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @var integer $rank
+     * @ORM\ManyToOne(targetEntity="App\Entity\Rank", cascade={"persist"})
+     * @ORM\JoinColumn(name="id_rank", referencedColumnName="id_rank", nullable=true)
+     */
+    private $rank;
 
     /**
      * @var datetime $date_create
@@ -39,6 +46,7 @@ class User
     public function __construct()
     {
         $this->date_create = new \DateTime();
+        $this->rank = null;
     }
 
     /**
@@ -95,5 +103,28 @@ class User
     public function getDateCreate()
     {
         return $this->date_create;
+    }
+
+    /**
+    * Get rank
+    *
+    * @return \Doctrine\Common\Collections\Collection
+    */
+    public function getRank()
+    {
+      return $this->rank;
+    }
+
+    /**
+     * Set rank
+     *
+     * @param \App\Entity\Rank $rank
+     *
+     * @return User
+     */
+    public function setRank(\App\Entity\Rank $rank = null)
+    {
+        $this->rank = $rank;
+        return $this;
     }
 }
