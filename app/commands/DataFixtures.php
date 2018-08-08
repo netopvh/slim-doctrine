@@ -20,7 +20,7 @@ use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\Common\DataFixtures\Loader;
 
-class DataFixture extends Command
+class DataFixtures extends Command
 {
     /**
      * @var \Doctrine\ORM\EntityManager

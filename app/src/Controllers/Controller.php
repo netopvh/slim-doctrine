@@ -44,8 +44,12 @@ class Controller
         $this->container->view->render($response, $file, $params);
     }
 
-    public function redirect(ResponseInterface $response, $name, $status = 302)
+    public function redirect(ResponseInterface $response, $name, $status = 302, $params = [])
     {
-        return $response->withStatus($status)->withHeader('Location', $this->router->pathFor($name));
+        if (empty($params)) {
+            return $response->withStatus($status)->withHeader('Location', $this->router->pathFor($name));
+        } else {
+            return $response->withStatus($status)->withHeader('Location', $this->router->pathFor($name, $params));
+        }
     }
 }

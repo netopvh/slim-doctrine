@@ -7,21 +7,21 @@ use PhpSchool\CliMenu\CliMenu;
 use PhpSchool\CliMenu\Builder\CliMenuBuilder;
 
 if (isset($argv[1])) {
-    $application = new Application('Console', '1.1.2');
+    $application = new Application('Console', '1.1.3');
 
     $CacheClearCommand = new \Commands\CacheClear();
-    //$GenerateCommand = new \Commands\GenerateCommand();
     $GenerateController = new \Commands\GenerateController();
     $GenerateMiddleware = new \Commands\GenerateMiddleware();
     $GenerateEntity = new \Commands\GenerateEntity();
-    $DataFixture = new \Commands\DataFixture();
+    $GenerateFixture = new \Commands\GenerateFixture();
+    $DataFixtures = new \Commands\DataFixtures();
 
     $application->add($CacheClearCommand);
-    //$application->add($GenerateCommand);
     $application->add($GenerateController);
     $application->add($GenerateMiddleware);
     $application->add($GenerateEntity);
-    $application->add($DataFixture);
+    $application->add($GenerateFixture);
+    $application->add($DataFixtures);
     $application->run();
 } else {
     $menu = (new CliMenuBuilder)
@@ -40,15 +40,31 @@ if (isset($argv[1])) {
                 ->setExitButtonText("Quitter")
                 ->addItem('Générer un Controller', function (CliMenu $menu) {
                     $menu->close();
-                    system('php '.__DIR__.'/console generate:controller CliController');
+                    echo "Veuillez indiquer le nom du contrôleur : ";
+                    $handle = fopen("php://stdin", "r");
+                    $line = fgets($handle);
+                    system('php '.__DIR__.'/console generate:controller '.trim($line));
                 })
                 ->addItem('Générer un Middleware', function (CliMenu $menu) {
                     $menu->close();
-                    system('php '.__DIR__.'/console generate:middleware CliMiddleware');
+                    echo "Veuillez indiquer le nom du middleware : ";
+                    $handle = fopen("php://stdin", "r");
+                    $line = fgets($handle);
+                    system('php '.__DIR__.'/console generate:middleware '.trim($line));
                 })
                 ->addItem('Générer une Entity', function (CliMenu $menu) {
                     $menu->close();
-                    system('php '.__DIR__.'/console generate:entity Cli');
+                    echo "Veuillez indiquer le nom de l'entité : ";
+                    $handle = fopen("php://stdin", "r");
+                    $line = fgets($handle);
+                    system('php '.__DIR__.'/console generate:entity '.trim($line));
+                })
+                ->addItem('Générer une Fixture', function (CliMenu $menu) {
+                    $menu->close();
+                    echo "Veuillez indiquer le nom de la fixture : ";
+                    $handle = fopen("php://stdin", "r");
+                    $line = fgets($handle);
+                    system('php '.__DIR__.'/console generate:fixture '.trim($line));
                 })
                 ->setGoBackButtonText("Retour");
         })
@@ -59,7 +75,7 @@ if (isset($argv[1])) {
                   $menu->close();
                   system('php '.__DIR__.'/vendor/bin/doctrine orm:schema-tool:update --force');
               })
-              ->addItem('Initialiser les fixtures', function (CliMenu $menu) {
+              ->addItem('Purger la base et initialiser les fixtures', function (CliMenu $menu) {
                   $menu->close();
                   system('php '.__DIR__.'/console data:fixtures');
               })

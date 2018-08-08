@@ -11,4 +11,9 @@ class PregReplace extends Controller
         $params = [];
         $this->render($response, 'pages/home.twig', $params);
     }
+
+    public function postPregReplace(RequestInterface $request, ResponseInterface $response)
+    {
+        return $this->redirect($response, 'home');
+    }
 }

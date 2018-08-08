@@ -1,6 +1,6 @@
 {
   "name": "slim-doctrine",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Plus qu'un simple skeleton slim, un véritable framework.",
   "main": "webpack.config.js",
   "devDependencies": {

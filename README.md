@@ -1,4 +1,4 @@
-[![version](https://img.shields.io/badge/Version-1.1.2-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.1.2)
+[![version](https://img.shields.io/badge/Version-1.1.3-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.1.3)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://php.net/)
 [![Minimum Node Version](https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg)](https://nodejs.org/en/)
 [![Build Status](https://travis-ci.org/SimonDevelop/slim-doctrine.svg?branch=master)](https://travis-ci.org/SimonDevelop/slim-doctrine)
@@ -19,7 +19,7 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - Organisation du container pour faciliter l'ajout de nouvelles librairies.
 - Fichier `config/error_pages.php` pour personnaliser les pages d'erreurs (404, 405, 500).
 - Mise en place de middlewares pour le csrf, token, message flash et sauvegarde des inputs.
-- Commandes via la console pour créer rapidement des controlleurs/middlewares ou pour vider le cache de twig.
+- Commandes via la console pour créer rapidement des contrôleurs/middlewares/entitées/fixtures ou pour vider le cache de twig.
 - Doctrine 2 comme ORM avec les DataFixtures.
 - Un helper pour la gestion des sessions.
 - Système multilingue avec twig.

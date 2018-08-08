@@ -20,8 +20,12 @@ class GenerateEntity extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $name = $input->getArgument('name');
+        // Entity
         $text = file_get_contents(__DIR__.'/templates/entity.template.php');
         file_put_contents(dirname(__DIR__).'/src/Entity/'.$name.'.php', preg_replace('/PregReplace/', "$name", $text));
-        $output->writeln("Entité généré");
+        // Repository
+        $text = file_get_contents(__DIR__.'/templates/repository.template.php');
+        file_put_contents(dirname(__DIR__).'/src/Entity/'.$name.'Repository.php', preg_replace('/PregReplace/', "$name", $text));
+        $output->writeln("Entité générée");
     }
 }
