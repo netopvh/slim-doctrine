@@ -10,18 +10,16 @@ if (isset($argv[1])) {
     $application = new Application('Console', '1.1.2');
 
     $CacheClearCommand = new \Commands\CacheClear();
-    //$GenerateCommand = new \Commands\GenerateCommand();
     $GenerateController = new \Commands\GenerateController();
     $GenerateMiddleware = new \Commands\GenerateMiddleware();
     $GenerateEntity = new \Commands\GenerateEntity();
-    $DataFixture = new \Commands\DataFixture();
+    $DataFixtures = new \Commands\DataFixtures();
 
     $application->add($CacheClearCommand);
-    //$application->add($GenerateCommand);
     $application->add($GenerateController);
     $application->add($GenerateMiddleware);
     $application->add($GenerateEntity);
-    $application->add($DataFixture);
+    $application->add($DataFixtures);
     $application->run();
 } else {
     $menu = (new CliMenuBuilder)
@@ -68,7 +66,7 @@ if (isset($argv[1])) {
                   $menu->close();
                   system('php '.__DIR__.'/vendor/bin/doctrine orm:schema-tool:update --force');
               })
-              ->addItem('Initialiser les fixtures', function (CliMenu $menu) {
+              ->addItem('Purger la base et initialiser les fixtures', function (CliMenu $menu) {
                   $menu->close();
                   system('php '.__DIR__.'/console data:fixtures');
               })
