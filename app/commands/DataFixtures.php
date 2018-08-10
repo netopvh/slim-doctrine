@@ -37,14 +37,12 @@ class DataFixtures extends Command
 
         if (getenv('ENV') == 'local') {
             $db = "D";
-            $devMod = true;
         } elseif (getenv('ENV') == 'prod') {
             $db = "P";
-            $devMod = false;
         }
 
         $settings = [
-            'devMode' => $devMod,
+            'devMode' => true,
             'path' => ['app/src/Entity']
         ];
 
