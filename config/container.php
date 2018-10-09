@@ -19,28 +19,11 @@ $container['logger'] = function ($container) {
     return $logger;
 };
 
-if (getenv('ENV') == 'local') {
+if (getenv('ENV') == 'dev') {
     $container['twig_profile'] = function () {
         return new Twig_Profiler_Profile();
     };
 }
-
-// Translator
-$container['translator'] = function ($container) {
-    $loader = new Illuminate\Translation\FileLoader(
-        new Illuminate\Filesystem\Filesystem(),
-        dirname(__DIR__) . '/config/translations'
-    );
-
-    // Langue par défaut via la session
-    $session = $container['session'];
-    if (!$session->has('lang')) {
-        $session->set('lang', 'en');
-    }
-
-    $translator = new Illuminate\Translation\Translator($loader, $session->get('lang'));
-    return $translator;
-};
 
 // Twig
 $container['view'] = function ($container) {
@@ -58,38 +41,55 @@ $container['view'] = function ($container) {
 
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
-    if (getenv('ENV') == 'local') {
+    if (getenv('ENV') == 'dev') {
         $view->addExtension(new Twig_Extension_Profiler($container['twig_profile']));
         $view->addExtension(new Twig_Extension_Debug());
     }
-    $view->addExtension(new App\Extensions\TranslatorExtension($container['translator']));
 
+    $defaultLang = 'en';
+    $session = $container['session'];
+
+    if (!$session->has('lang')) {
+        if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) && !is_null($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+            $lang = strtolower(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+            if (file_exists(dirname(__DIR__).'/config/translations/'.$lang.".yml")) {
+                $session->set('lang', $lang);
+            } else {
+                $session->set('lang', $defaultLang);
+            }
+        } else {
+            $session->set('lang', $defaultLang);
+        }
+    }
+    $translator = new \Symfony\Component\Translation\Translator(
+        $session->get('lang'),
+        null
+    );
+    $translator->setFallbackLocales([$defaultLang]);
+    $translator->addLoader('yml', new \Symfony\Component\Translation\Loader\YamlFileLoader());
+    $directory = new \RecursiveDirectoryIterator(
+        dirname(__DIR__).'/config/translations/',
+        \FilesystemIterator::SKIP_DOTS
+    );
+    $it = new \RecursiveIteratorIterator($directory, \RecursiveIteratorIterator::SELF_FIRST);
+    $it->setMaxDepth(1);
+    foreach ($it as $fileinfo) {
+        if ($fileinfo->isFile() && $fileinfo->getFilename() != ".gitkeep") {
+            $lang = explode(".", $fileinfo->getFilename());
+            $translator->addResource(
+                'yml',
+                dirname(__DIR__).'/config/translations/'.$fileinfo->getFilename(),
+                $lang[0]
+            );
+        }
+    }
+    $view->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($translator));
     return $view;
 };
 
-// DBAL de doctrine
-$container['dbal'] = function () {
-    if (getenv('ENV') == 'local') {
-        $db = "D";
-    } elseif (getenv('ENV') == 'prod') {
-        $db = "P";
-    }
-    $conn = \Doctrine\DBAL\DriverManager::getConnection([
-            'driver' => getenv('DB'.$db.'_TYPE'),
-            'host' => getenv('DB'.$db.'_SERVER'),
-            'user' => getenv('DB'.$db.'_USER'),
-            'password' => getenv('DB'.$db.'_PWD'),
-            'dbname' => getenv('DB'.$db.'_NAME'),
-            'port' => 3306,
-            'charset' => 'utf8'
-    ], new \Doctrine\DBAL\Configuration);
-    return $conn->createQueryBuilder();
-};
-
-
 // EntityManager de doctrine
 $container['em'] = function () {
-    if (getenv('ENV') == 'local') {
+    if (getenv('ENV') == 'dev') {
         $db = "D";
     } elseif (getenv('ENV') == 'prod') {
         $db = "P";

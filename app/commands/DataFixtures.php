@@ -35,7 +35,7 @@ class DataFixtures extends Command
         $dotenv = new Dotenv(dirname(dirname(__DIR__))."/");
         $dotenv->load(true);
 
-        if (getenv('ENV') == 'local') {
+        if (getenv('ENV') == 'dev') {
             $db = "D";
         } elseif (getenv('ENV') == 'prod') {
             $db = "P";

@@ -1,50 +1,28 @@
 # Multilingue
 
-Vous pouvez faire du multilingue avec twig, vous avez peut-être remarquer les dossiers `en` et `fr` dans `config/translations/`.
+Vous pouvez faire du multilingue avec twig, vous avez peut-être remarquer les fichiers `en.yml` et `fr.yml` dans `config/translations/`.
 
-Il s'agit des dossiers de traduction, dans la vue d'exemple `Views/pages/home.twig` on utilise la function twig `trans()`, dans l'exemple :
+Il s'agit des fichiers de traduction, dans la vue d'exemple `Views/pages/home.twig` on utilise le filtre twig `trans`, dans l'exemple :
 ```twig
-{{ trans('messages.title') }}
+{{ {{ "title"|trans }} }}
 ```
-La fonction recherche la phrase `title` dans `messages`, elle fait référence aux fichiers `messages.php` dans les dossiers `config/translations/en/` et `config/translations/fr/`:
-```php
+Le filtre recherche la clef `title` dans les fichers `fr.yml` et `en.yml`, pour ensuite retourner la valeur selon la langue utilisée :
+```yaml
 <?php
-// config/translations/fr/messages.php
-return [
-    'title' => 'Bonjour le monde !'
-];
+// config/translations/fr.yml
+title: 'Bonjour le monde !'
 ```
-```php
+```yaml
 <?php
-// config/translations/en/messages.php
-return [
-    'title' => 'Hello world!'
-];
+// config/translations/en.yml
+title: 'Hello world!'
 ```
 
-Twig prendra la phrase qui correspond à la langue utilisée.<br>
-Pour modifier la langue par défaut, rendez-vous dans le container `config/container.php` et recherchez ces lignes:
-```php
-<?php
-// Translator
-$container['translator'] = function ($container) {
-    $loader = new Illuminate\Translation\FileLoader(new Illuminate\Filesystem\Filesystem(), dirname(__DIR__) . '/config/translations');
+Pour modifier la langue par défaut, rendez-vous dans le container `config/container.php`, cherchez et modifier la valeur de la variable `$defaultLang`:
 
-    // Langue par défaut via la session
-    $session = $container['session'];
-    if (!$session->has('lang')) {
-        $session->set('lang', 'en');
-    }
+Dans notre cas, remplacez `en` par `fr`, assurez-vous d'avoir les fichiers de vos langues dans `config/translations/`.
 
-    $translator = new Illuminate\Translation\Translator($loader, $session->get('lang'));
-    return $translator;
-};
-```
-Dans les lignes de code au centre, la langue est défini par une variable de session `lang`, vous pouvez très bien remplacer cette méthode par une autre si vous le souhaitez.
-
-Dans notre cas, remplacez `en` par `fr`, assurez-vous d'avoir les dossiers/fichiers de vos langues dans `config/translations/`.
-
-Avec la méthode variable de session pour définir la langue utilisée, vous pouvez la modifier via vos `controllers/middlewares` en remplaçant la valeur `en` par `fr` par exemple.
+Vous pouvez changer la langue via la session comme ceci `$session->set('lang', 'fr')` dans vos `controllers` et `middlewares` si besoin.
 
 
 | Introduction | Chapitre précédent |

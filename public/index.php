@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Initialisation de Slim en fonction de l'environnement de développement
-if (getenv('ENV') == 'local') {
+if (getenv('ENV') == 'dev') {
     error_reporting(-1);
     ini_set('display_errors', 'On');
     ini_set('display_startup_errors', 'On');

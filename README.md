@@ -1,5 +1,5 @@
 [![version](https://img.shields.io/badge/Version-1.1.4-brightgreen.svg)](https://github.com/SimonDevelop/slim-doctrine/releases/tag/1.1.4)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1.3-8892BF.svg)](https://php.net/)
 [![Minimum Node Version](https://img.shields.io/badge/node-%3E%3D%206.11.5-brightgreen.svg)](https://nodejs.org/en/)
 [![Build Status](https://travis-ci.org/SimonDevelop/slim-doctrine.svg?branch=master)](https://travis-ci.org/SimonDevelop/slim-doctrine)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/SimonDevelop/slim-doctrine/blob/master/LICENSE)
@@ -40,7 +40,7 @@ Pour toutes contribution sur github, merci de lire le document [CONTRIBUTING.md]
 - [seldaek/monolog](https://github.com/Seldaek/monolog) pour gérer des logs.
 - [runcmf/runtracy](https://github.com/runcmf/runtracy) le profiler.
 - [adbario/slim-secure-session-middleware](https://github.com/adbario/slim-secure-session-middleware) helper pour la gestion des sessions.
-- [illuminate/translation](https://github.com/illuminate/translation) pour le système multilingue.
+- [symfony/translation](https://github.com/symfony/translation) pour le système multilingue.
 - [webpack/webpack](https://github.com/webpack/webpack) pour la fusion et minification des fichiers css/js.
 
 
@@ -53,7 +53,7 @@ $ composer create-project simondevelop/slim-doctrine <projet_name>
 $ cd <projet_name>
 $ composer install
 ```
-Vérifiez que le fichier `.env` a bien été créé, il s'agit du fichier de configuration de votre environnement ou vous définissez la connexion à la base de données, l'environnement `local` ou `prod` et l'activation du cache de twig.
+Vérifiez que le fichier `.env` a bien été créé, il s'agit du fichier de configuration de votre environnement ou vous définissez la connexion à la base de données, l'environnement `dev` ou `prod` et l'activation du cache de twig.
 
 Si jamais le fichier n'a pas été créé, faite le manuellement en dupliquant le fichier `.env.example`.
 
@@ -103,8 +103,8 @@ DBP_USER = "root"
 DBP_PWD = "root"
 
 # Environment mode
-# ("local" pour developpement | "prod" pour production)
-ENV = "local"
+# ("dev" pour developpement | "prod" pour production)
+ENV = "dev"
 
 # Cache twig
 CACHE = false
