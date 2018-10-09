@@ -5,7 +5,6 @@
   <arg value="p"/>
 
   <file>app/commands</file>
-  <file>app/extensions</file>
   <file>app/src</file>
   <file>config</file>
   <file>public/index.php</file>
