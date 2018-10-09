@@ -8,7 +8,6 @@ Pour bien comprendre l'organisation de cette arborescence, voici un petit chemin
 - `app/` dossier de l'application
   - `cache/` cache [twig](https://github.com/slimphp/Twig-View) de l'application
   - `commands/` les commandes [console](https://github.com/symfony/console)
-  - `extensions/` les classes d'extensions utilisées (exemple: TranslatorExtension pour twig)
   - `logs/` les logs de [monolog](https://github.com/Seldaek/monolog)
   - `src/` dossier des controllers/middlewares/views
     - `Controllers/` dossier des controllers

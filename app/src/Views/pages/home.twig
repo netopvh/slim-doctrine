@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h1 id="titleExemple">{{ trans('messages.title') }}</h1>
-<p>{{ trans('messages.greet', {'name': user}) }}</p>
+<h1 id="titleExemple">{{ "title"|trans }}</h1>
+<p>{{ "greet"|trans({':name': user}) }}</p>
 <div id="logo"></div>
 
 {% endblock %}
